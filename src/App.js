@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ColoredBlock from './ColoredBlock';
+function Car(props) {
+  return <h5>I am a { props.brand.model }!</h5>;
+}
 
-function App() {
+function Garage() {
+  const carInfo = { name: "Ford", model: "Ecosport" };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+	    <h3>What is the car</h3>
+	    <Car brand={ carInfo } />
+      <div className="main-content">
+          <ColoredBlock />
+        </div>
+    </>
   );
 }
 
-export default App;
+export default Garage;
